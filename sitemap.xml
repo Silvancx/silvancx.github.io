@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2018-03-16T06:19:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2018-03-16T06:07:14.429Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2018-03-16T06:06:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/03/14/Markdown-%E8%AF%AD%E6%B3%95/</loc>
     
     <lastmod>2018-03-14T09:48:16.000Z</lastmod>
@@ -12,27 +33,6 @@
     <loc>http://yoursite.com/2018/03/13/Redis-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/</loc>
     
     <lastmod>2018-03-13T11:19:20.950Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
-    
-    <lastmod>2018-03-09T07:36:59.052Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2018-03-09T02:37:25.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2018-03-08T02:30:51.000Z</lastmod>
     
   </url>
   
