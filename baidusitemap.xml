@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>http://silvancx.org/2018/03/13/Redis-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/</loc>
+    <lastmod>2018-03-19T07:45:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>Redis 后台运行</title>
+        <pubTime>2018-03-13T10:17:27.000Z</pubTime>
+        
+        <tag>Redis</tag>
+         
+        <tag>缓存</tag>
+         
+         
+           
+             
+              <breadCrumb title="缓存框架" url="http://silvancx.org/categories/%E7%BC%93%E5%AD%98%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://silvancx.org/2018/03/19/Chrome%E3%80%81Safari-%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2018-03-19T06:24:40.000Z</lastmod>
+    <lastmod>2018-03-19T07:14:14.000Z</lastmod>
     <data>
         <display>
         <title>Chrome、Safari  快捷键整理</title>
@@ -110,28 +132,6 @@
            
              
               <breadCrumb title="Markdown" url="http://silvancx.org/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://silvancx.org/2018/03/13/Redis-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/</loc>
-    <lastmod>2018-03-13T11:19:20.950Z</lastmod>
-    <data>
-        <display>
-        <title>Redis 后台运行</title>
-        <pubTime>2018-03-13T10:17:27.000Z</pubTime>
-        
-        <tag>Redis</tag>
-         
-        <tag>缓存</tag>
-         
-         
-           
-             
-              <breadCrumb title="缓存框架" url="http://silvancx.org/categories/%E7%BC%93%E5%AD%98%E6%A1%86%E6%9E%B6/"/>
           
         </display>
     </data>
