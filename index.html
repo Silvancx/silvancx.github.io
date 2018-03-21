@@ -282,6 +282,274 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://silvancx.org/2018/03/21/Quartz-cron表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Silvancx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silvancx Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/21/Quartz-cron表达式/" itemprop="url">Quartz-Cron表达式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T14:22:36+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Cron表达式/" itemprop="url" rel="index">
+                    <span itemprop="name">Cron表达式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/21/Quartz-cron表达式/" class="leancloud_visitors" data-flag-title="Quartz-Cron表达式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,438
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>Cron</code>表达式主要是用在Quartz框架中，<code>Quartz</code>是一个完全由java编写的开源<code>作业调度框架</code>，最主要的功能就是<code>调度器</code>(完成定时任务)，可以与javaEE或者javaSE应用程序相结合也可以单独使用，能借助关系数据库和JDBC作业存储支持集群，负载均衡。</p>
+<h5 id="Cron表达式详解"><a href="#Cron表达式详解" class="headerlink" title="Cron表达式详解"></a>Cron表达式详解</h5><p><code>Cron</code>表达式用于配置<code>cronTrigger</code>的实例。Cron表达式实际上是由<code>七个子表达式</code>组成。这些表达式之间用<strong>空格</strong>分隔。</p>
+<ol>
+<li>Seconds       &emsp;&emsp;（秒）</li>
+<li>Minutes    &emsp;&emsp;   （分）</li>
+<li>Hours     &emsp;&emsp;&emsp;    （小时）</li>
+<li>Day-of-Month   （天）</li>
+<li>Month      &emsp;&emsp; &emsp;  （月）</li>
+<li>Day-of-Week  （周）</li>
+<li>Year         &emsp;&emsp;&emsp;&emsp;&emsp;（年）</li>
+</ol>
+<p>例：<code>0 0 12 ? * WED</code> 意思是：每个星期三的中午12点执行。</p>
+<h5 id="子表达式范围"><a href="#子表达式范围" class="headerlink" title="子表达式范围"></a>子表达式范围</h5><ol>
+<li>Seconds &emsp;&emsp;&emsp;&emsp;&emsp;(0~59)</li>
+<li>Minutes &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;(0~59)</li>
+<li>Hours &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;(0~23)</li>
+<li>Day-of-Month &emsp;&emsp;(1~31,但是要注意有些月份没有31天)</li>
+<li>Month &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (0~11，或者「JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV,DEC「)</li>
+<li>Day-of-Week &emsp;&emsp;&emsp;(1~7,1=SUN 或者SUN, MON, TUE, WED, THU, FRI, SAT)</li>
+<li>Year &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (1970~2099)</li>
+</ol>
+<h5 id="Cron表达式的格式：秒-分-时-日-月-周-年-可选"><a href="#Cron表达式的格式：秒-分-时-日-月-周-年-可选" class="headerlink" title="Cron表达式的格式：秒 分 时 日 月 周 年(可选)"></a>Cron表达式的格式：秒 分 时 日 月 周 年(可选)</h5><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th style="text-align:center">允许的值</th>
+<th style="text-align:center">允许的特殊字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>秒</td>
+<td style="text-align:center">0-59</td>
+<td style="text-align:center">, - * /</td>
+</tr>
+<tr>
+<td>分</td>
+<td style="text-align:center">0-59</td>
+<td style="text-align:center">, - * /</td>
+</tr>
+<tr>
+<td>小时</td>
+<td style="text-align:center">0-23</td>
+<td style="text-align:center">, - * /</td>
+</tr>
+<tr>
+<td>日</td>
+<td style="text-align:center">1-31</td>
+<td style="text-align:center">, - * ? / L W C</td>
+</tr>
+<tr>
+<td>月</td>
+<td style="text-align:center">1-12 or JAN-DEC</td>
+<td style="text-align:center">, - * /</td>
+</tr>
+<tr>
+<td>周几</td>
+<td style="text-align:center">1-7 or SUN-SAT</td>
+<td style="text-align:center">, - * ? / L C #</td>
+</tr>
+<tr>
+<td>年(可选字段)</td>
+<td style="text-align:center">empty</td>
+<td style="text-align:center">1970-2099 , - * /</td>
+</tr>
+</tbody>
+</table>
+<h5 id="字符含义"><a href="#字符含义" class="headerlink" title="字符含义"></a>字符含义</h5><p><code>*</code> ：代表所有可能的值。因此，<code>*</code>在Month中表示每个月，在Day-of-Month中表示每天，在Hours表示每小时</p>
+<p><code>-</code> ：表示指定范围。</p>
+<p><code>,</code> ：表示列出枚举值。例如：在Minutes子表达式中，「5,20」表示在5分钟和20分钟触发。</p>
+<p><code>/</code> ：被用于指定增量。例如：在Minutes子表达式中，「0/15」表示从0分钟开始，每15分钟执行一次。「3/20」表示从第三分钟开始，每20分钟执行一次。和「3,23,43」（表示第3，23，43分钟触发）的含义一样。</p>
+<p><code>?</code> ：用在Day-of-Month和Day-of-Week中，指「没有具体的值」。当两个子表达式其中一个被指定了值以后，为了避免冲突，需要将另外一个的值设为「?」。例如：想在每月20日触发调度，不管20号是星期几，只能用如下写法：0 0 0 20 <em> ?，其中最后以为只能用「?」，而不能用「</em>」。</p>
+<p><code>L</code> ：用在<strong>day-of-month</strong>和<strong>day-of-week</strong>字串中。它是单词「last」的缩写。它在两个子表达式中的含义是不同的。<br>在day-of-month中，「L」表示一个月的最后一天，一月31号，3月30号。<br>在day-of-week中，「L」表示一个星期的最后一天，也就是「7」或者「SAT」<br>如果「L」前有具体内容，它就有其他的含义了。例如：「6L」表示这个月的倒数第六天。「FRIL」表示这个月的最后一个星期五。<br>注意：在使用「L」参数时，不要指定列表或者范围，这样会出现问题。</p>
+<p><code>W</code>：<strong>Weekday</strong>的缩写。只能用在<em>day-of-month</em>字段。用来描叙最接近指定天的工作日（周一到周五）。例如：在day-of-month字段用「15W」指「最接近这个月第15天的工作日」，即如果这个月第15天是周六，那么触发器将会在这个月第14天即周五触发；如果这个月第15天是周日，那么触发器将会在这个月第 16天即周一触发；如果这个月第15天是周二，那么就在触发器这天触发。注意一点：这个用法只会在当前月计算值，不会越过当前月。「W」字符仅能在 day-of-month指明一天，不能是一个范围或列表。也可以用「LW」来指定这个月的最后一个工作日，即最后一个星期五。</p>
+<p><code>#</code> ：只能用在<strong>day-of-week</strong>字段。用来指定这个月的第几个周几。例：在day-of-week字段用「6#3」 or 「FRI#3」指这个月第3个周五（6指周五，3指第3个）。如果指定的日期不存在，触发器就不会触发。</p>
+<h6 id="表达式例子"><a href="#表达式例子" class="headerlink" title="表达式例子"></a>表达式例子</h6><p><code>0 * * * * ?</code> 每1分钟触发一次<br><code>0 0 * * * ?</code> 每天每1小时触发一次<br><code>0 0 10 * * ?</code> 每天10点触发一次<br><code>0 * 14 * * ?</code> 在每天下午2点到下午2:59期间的每1分钟触发<br><code>0 30 9 1 * ?</code> 每月1号上午9点半<br><code>0 15 10 15 * ?</code> 每月15日上午10:15触发</p>
+<p><code>*/5 * * * * ?</code> 每隔5秒执行一次<br><code>0 */1 * * * ?</code> 每隔1分钟执行一次<br><code>0 0 5-15 * * ?</code> 每天5-15点整点触发<br><code>0 0/3 * * * ?</code> 每三分钟触发一次<br><code>0 0-5 14 * * ?</code> 在每天下午2点到下午2:05期间的每1分钟触发<br><code>0 0/5 14 * * ?</code> 在每天下午2点到下午2:55期间的每5分钟触发<br><code>0 0/5 14,18 * * ?</code> 在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发<br><code>0 0/30 9-17 * * ?</code> 朝九晚五工作时间内每半小时<br><code>0 0 10,14,16 * * ?</code> 每天上午10点，下午2点，4点 </p>
+<p><code>0 0 12 ? * WED</code> 表示每个星期三中午12点<br><code>0 0 17 ? * TUES,THUR,SAT</code> 每周二、四、六下午五点<br><code>0 10,44 14 ? 3 WED</code> 每年三月的星期三的下午2:10和2:44触发<br><code>0 15 10 ? * MON-FRI</code> 周一至周五的上午10:15触发</p>
+<p><code>0 0 23 L * ?</code> 每月最后一天23点执行一次<br><code>0 15 10 L * ?</code> 每月最后一日的上午10:15触发<br><code>0 15 10 ? * 6L</code> 每月的最后一个星期五上午10:15触发 </p>
+<p><code>0 15 10 * * ?</code> 2005 2005年的每天上午10:15触发<br><code>0 15 10 ? * 6L</code> 2002-2005 2002年至2005年的每月的最后一个星期五上午10:15触发<br><code>0 15 10 ? * 6#3</code> 每月的第三个星期五上午10:15触发</p>
+<h6 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h6><p><a href="http://www.cnblogs.com/lazyInsects/p/8075487.html" target="_blank" rel="noopener">quartz定时任务cron表达式详解</a></p>
+
+          
+        
+      
+    </div>
+    <div>    
+ 
+ 
+</div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://silvancx.org/2018/03/21/Iterm2-快捷键记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2026,201 +2294,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://silvancx.org/2014/12/21/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Silvancx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Silvancx Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2014/12/21/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-12-21T14:21:45+08:00">
-                2014-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/分享/" itemprop="url" rel="index">
-                    <span itemprop="name">分享</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2014/12/21/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  78
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/12/21/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    <div>    
- 
- 
-</div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2268,7 +2348,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2279,7 +2359,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2290,7 +2370,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2392,7 +2472,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.7k</span>
+    <span title="Site words total count">9.2k</span>
   
 </div>
 
