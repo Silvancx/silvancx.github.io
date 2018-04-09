@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Silvancx Blog">
 <meta property="og:description" content="Java 中 String 创建详细解释字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象一旦创建就不允许修改。String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象. 对象创建看下面一段代码.1234567String str2 = new String(&amp;quot;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-09T03:19:46.139Z">
+<meta property="og:updated_time" content="2018-04-09T06:50:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java字符串缓冲池">
 <meta name="twitter:description" content="Java 中 String 创建详细解释字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象一旦创建就不允许修改。String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象. 对象创建看下面一段代码.1234567String str2 = new String(&amp;quot;">
@@ -426,8 +426,7 @@
       
         <p>Java 中 String 创建详细解释<br>字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象<br>一旦创建就不允许修改。<br>String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象.</p>
 <h5 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h5><p>看下面一段代码.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str2 = new String(&quot;Hello&quot;);</span><br><span class="line">String str = &quot;Hello&quot;;</span><br><span class="line">String str3 = new String(&quot;Hello&quot;);</span><br><span class="line"></span><br><span class="line">System.out.println(str == str2);</span><br><span class="line">System.out.println(str == str3);</span><br><span class="line">System.out.println(str2 == str3);</span><br></pre></td></tr></table></figure></p>
-<p>请问 前面三条语句分别创建了几个对象? 分别是什么.后面的输出分别是什么</p>
-<p><code>String str2 = new String(&quot;Hello&quot;)</code>这句代码总共创建了<strong>两个</strong>对象，其内容都是「Hello」。<br>注意<code>str2</code>只是引用，不是对象，new操作生成的才是对象。<br>创建流程 首先括号里的「Hello」是先到<code>String pool</code>缓冲池中查找是否有「Hello」这个对象，没有则在<code>String pool</code>中创建该对象。然后通过<code>new</code>操作在堆内存中创建了一个「Hello」对象，这里的<code>str2</code>指向了堆内存中「Hello」对象。</p>
+<p>请问 前面三条语句分别创建了几个对象? 分别是什么.后面的输出分别是什么<br><a id="more"></a><br><code>String str2 = new String(&quot;Hello&quot;)</code>这句代码总共创建了<strong>两个</strong>对象，其内容都是「Hello」。<br>注意<code>str2</code>只是引用，不是对象，new操作生成的才是对象。<br>创建流程 首先括号里的「Hello」是先到<code>String pool</code>缓冲池中查找是否有「Hello」这个对象，没有则在<code>String pool</code>中创建该对象。然后通过<code>new</code>操作在堆内存中创建了一个「Hello」对象，这里的<code>str2</code>指向了堆内存中「Hello」对象。</p>
 <p><code>String str = &quot;Hello&quot;</code>它所执行的操作流程与第一句代码相比，少了<code>new</code>关键字。直接查找<code>String pool</code>缓冲池是否有「Hello」对象。而此时，第一条语句已经在pool中创建了一个「Hello」对象，所以这句代码没有创建对象。<code>str</code>指向的是String Pool中的「Hello」对象。</p>
 <p><code>String str3 = new String(&quot;Hello&quot;)</code>这句代码与第一句代码一样，首先它没有再String Pool中创建「Hello」对象，因为第一句代码已经先行创建了该对象。而只是在堆内存中创建「Hello」对象。<em>注意</em>虽然内容都是「Hello」<code>str2</code>与<code>str3</code>表示的是不同的对象，它们所分配的内存地址不一样。</p>
 <p>下面3个<code>==</code>号判断，<em>注意</em>『==号判断的是内存地址是否相等』</p>

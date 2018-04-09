@@ -416,21 +416,18 @@
 
       
         
-          
-            <h5 id="Integer缓冲区"><a href="#Integer缓冲区" class="headerlink" title="Integer缓冲区"></a>Integer缓冲区</h5><blockquote>
+          <h5 id="Integer缓冲区"><a href="#Integer缓冲区" class="headerlink" title="Integer缓冲区"></a>Integer缓冲区</h5><blockquote>
 <p>针对-128和127之间的数据，Java做了一个数据缓冲区，如果数据属于这个范围内，会从缓冲区里面直接去数据，并不会创建新的空间</p>
 </blockquote>
 <p>下列代码的输出是什么</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Integer integer1 = 128;</span><br><span class="line">Integer integer2 = 128;</span><br><span class="line">System.out.println(integer1 == integer2);</span><br><span class="line">System.out.println(integer1.equals(integer2));</span><br><span class="line">System.out.println(&quot;-----------&quot;);</span><br><span class="line"></span><br><span class="line">Integer integer3 = 127;</span><br><span class="line">Integer integer4 = 127;</span><br><span class="line">System.out.println(integer3 == integer4);</span><br><span class="line">System.out.println(integer3.equals(integer4));</span><br></pre></td></tr></table></figure>
-<p>使用Integer声明的变量是一个对象，不再是基本数据类型，例如 Integer integer1 = 128，是将128进行装箱操作，使用Integer.valueOf(128)进行装箱。<br>由于Integer声明的变量是对象，因此我们会认为两个对象使用 == 进行比较时，肯定是false。<br>但实际的运行结果是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">false</span><br><span class="line">true</span><br><span class="line">-----------</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
-<p><em>注意</em>-本例代码运行环境<strong>Jdk8</strong></p>
-<p>结果显示，integer3和integer4指向的是同一个地址！！！</p>
-<p>查看Integer原码可知，针对「-128」至「127」之间的数据，Java做了一个数据缓冲区，如果数据属于这个范围内，会从缓冲区里面直接去数据，并不会创建新的空间。</p>
-<p>数据缓冲区中取数据的情况仅限于使用『=』进行直接赋值操作，不包括使用new Integer()创建的对象，使用new Integer()创建的对象不会出现 == 判断为true的情况。</p>
-<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p><a href="https://blog.csdn.net/liuweiballack/article/details/47614919" target="_blank" rel="noopener">https://blog.csdn.net/liuweiballack/article/details/47614919</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/09/Java-Integer缓冲区/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -615,33 +612,16 @@
 
       
         
-          
-            <p>Java 中 String 创建详细解释<br>字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象<br>一旦创建就不允许修改。<br>String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象.</p>
+          <p>Java 中 String 创建详细解释<br>字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象<br>一旦创建就不允许修改。<br>String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象.</p>
 <h5 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h5><p>看下面一段代码.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str2 = new String(&quot;Hello&quot;);</span><br><span class="line">String str = &quot;Hello&quot;;</span><br><span class="line">String str3 = new String(&quot;Hello&quot;);</span><br><span class="line"></span><br><span class="line">System.out.println(str == str2);</span><br><span class="line">System.out.println(str == str3);</span><br><span class="line">System.out.println(str2 == str3);</span><br></pre></td></tr></table></figure></p>
-<p>请问 前面三条语句分别创建了几个对象? 分别是什么.后面的输出分别是什么</p>
-<p><code>String str2 = new String(&quot;Hello&quot;)</code>这句代码总共创建了<strong>两个</strong>对象，其内容都是「Hello」。<br>注意<code>str2</code>只是引用，不是对象，new操作生成的才是对象。<br>创建流程 首先括号里的「Hello」是先到<code>String pool</code>缓冲池中查找是否有「Hello」这个对象，没有则在<code>String pool</code>中创建该对象。然后通过<code>new</code>操作在堆内存中创建了一个「Hello」对象，这里的<code>str2</code>指向了堆内存中「Hello」对象。</p>
-<p><code>String str = &quot;Hello&quot;</code>它所执行的操作流程与第一句代码相比，少了<code>new</code>关键字。直接查找<code>String pool</code>缓冲池是否有「Hello」对象。而此时，第一条语句已经在pool中创建了一个「Hello」对象，所以这句代码没有创建对象。<code>str</code>指向的是String Pool中的「Hello」对象。</p>
-<p><code>String str3 = new String(&quot;Hello&quot;)</code>这句代码与第一句代码一样，首先它没有再String Pool中创建「Hello」对象，因为第一句代码已经先行创建了该对象。而只是在堆内存中创建「Hello」对象。<em>注意</em>虽然内容都是「Hello」<code>str2</code>与<code>str3</code>表示的是不同的对象，它们所分配的内存地址不一样。</p>
-<p>下面3个<code>==</code>号判断，<em>注意</em>『==号判断的是内存地址是否相等』</p>
-<p><code>str == str2</code>很显然str的引用指向<code>String Pool</code>缓冲池，str2引用指向堆内存，所以是<code>false</code>。</p>
-<p><code>str == str3</code>也是一样，str的引用指向<code>String Pool</code>缓冲池，str3引用指向堆内存，所以是<code>false</code>。</p>
-<p><code>str2 == str3</code>虽然两个引用都是指向堆内存，内容也是「Hello」但是它们的内存地址不一样，所以是<code>false</code></p>
-<h5 id="intern-方法"><a href="#intern-方法" class="headerlink" title="intern()方法"></a>intern()方法</h5><blockquote>
-<p>按照「JDK」的帮助文档来说,是返回字符串对象的规范化表示形式。通<br>俗一点说,就是返回对应这个字符串内容的那个「String Pool」里的对象</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String s = new String(&quot;Hello&quot;);  </span><br><span class="line">String s1 = &quot;Hello&quot;;  </span><br><span class="line">String s2 = new String(&quot;Hello&quot;);  </span><br><span class="line"></span><br><span class="line">System.out.println(s == s1.intern());  </span><br><span class="line">System.out.println(s == s2.intern());  </span><br><span class="line">System.out.println(s1 == s2.intern());</span><br></pre></td></tr></table></figure>
-<p>上面输出的结果是：false、false、true</p>
-<p>s1.intern().他的执行流程是,在 pool 里去查找 s1 对应的内容(也就是『Hello』).如果找到,则返回 pool 里的对象.如果没有(老实说,我没想到有哪种情况是没有的),则<br>在 Pool 创建这个对象,并返回…<br>这样就很容易理解了「s1.intern」 返回的是 pool 里的『Hello』对象.与 s 这个堆里的对象肯定不同,返回 false.同理,s 与 s2.intern()也肯定不同,返回 false.第三个,s1 与s2.intern().其中 s2.intern()返回的是 pool 中的『Hello』对象,而 s1 也是指向 pool 中的『Hello』对象.所以返回的是 true。</p>
-<h5 id="字符串相加"><a href="#字符串相加" class="headerlink" title="字符串相加"></a>字符串相加</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String hello = &quot;hello&quot;;  </span><br><span class="line">String hel = &quot;hel&quot;;  </span><br><span class="line">String lo = &quot;lo&quot;;  </span><br><span class="line"></span><br><span class="line">System.out.println(hello == &quot;hel&quot; + &quot;lo&quot;);  </span><br><span class="line">System.out.println(hello == &quot;hel&quot; + lo);</span><br></pre></td></tr></table></figure>
-<p>上面的输出是：true、false</p>
-<p>首先,上面已经说明了<code>hello</code>、<code>hel</code> 、<code>lo</code> 这三个都是指向 pool 中的对象..<br>现在我们考虑<code>&quot;hel&quot; + &quot;lo&quot;</code> 按照内容来说,两个相加也就是”hello”.这个时候,这个会<br>返回 pool 中的”hello”对象.所以,<code>hello == &quot;hel&quot; + &quot;lo&quot;</code> 返回的是 true .<br>而<code>&quot;hel&quot; + lo</code> 虽然内容也是”hello”,但是它将在堆里面生成一个”hello”对象,并返回<br>这个对象…所以这里的结果是 false</p>
-<p>总结一下就是</p>
-<blockquote>
-<p>如果加号两边的是字面值(字面值就是直接在””里写的值,比如上面<br>的”hel”与”lo”),那么将在 pool 里查找有没对应内容的对象(这里的内容就是<br>“hello”),并返回 pool 里的对象.这和 hello 是一样的….<br>如果加号两边不满足上面的条件(比如,两边的值是引用值或者堆里的字符串对<br>象).那么将不会再 pool 里查找”hello”,而是直接在堆里生成一个新的对象。</p>
-</blockquote>
-<p>参考文章<br><a href="https://blog.csdn.net/tiantiandjava/article/details/46309163" target="_blank" rel="noopener">https://blog.csdn.net/tiantiandjava/article/details/46309163</a></p>
-
-          
+<p>请问 前面三条语句分别创建了几个对象? 分别是什么.后面的输出分别是什么<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/09/Java字符串缓冲池/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

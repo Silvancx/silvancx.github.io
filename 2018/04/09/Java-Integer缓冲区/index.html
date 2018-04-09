@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Silvancx Blog">
 <meta property="og:description" content="Integer缓冲区 针对-128和127之间的数据，Java做了一个数据缓冲区，如果数据属于这个范围内，会从缓冲区里面直接去数据，并不会创建新的空间  下列代码的输出是什么 12345678910Integer integer1 = 128;Integer integer2 = 128;System.out.println(integer1 == integer2);System.out.pri">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-09T06:00:43.178Z">
+<meta property="og:updated_time" content="2018-04-09T06:50:54.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Integer缓冲区">
 <meta name="twitter:description" content="Integer缓冲区 针对-128和127之间的数据，Java做了一个数据缓冲区，如果数据属于这个范围内，会从缓冲区里面直接去数据，并不会创建新的空间  下列代码的输出是什么 12345678910Integer integer1 = 128;Integer integer2 = 128;System.out.println(integer1 == integer2);System.out.pri">
@@ -429,6 +429,7 @@
 </blockquote>
 <p>下列代码的输出是什么</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Integer integer1 = 128;</span><br><span class="line">Integer integer2 = 128;</span><br><span class="line">System.out.println(integer1 == integer2);</span><br><span class="line">System.out.println(integer1.equals(integer2));</span><br><span class="line">System.out.println(&quot;-----------&quot;);</span><br><span class="line"></span><br><span class="line">Integer integer3 = 127;</span><br><span class="line">Integer integer4 = 127;</span><br><span class="line">System.out.println(integer3 == integer4);</span><br><span class="line">System.out.println(integer3.equals(integer4));</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>使用Integer声明的变量是一个对象，不再是基本数据类型，例如 Integer integer1 = 128，是将128进行装箱操作，使用Integer.valueOf(128)进行装箱。<br>由于Integer声明的变量是对象，因此我们会认为两个对象使用 == 进行比较时，肯定是false。<br>但实际的运行结果是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">false</span><br><span class="line">true</span><br><span class="line">-----------</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
 <p><em>注意</em>-本例代码运行环境<strong>Jdk8</strong></p>
