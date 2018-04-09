@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Silvancx Blog">
 <meta property="og:description" content="Java 中 String 创建详细解释字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象一旦创建就不允许修改。String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象. 对象创建看下面一段代码.1234567String str2 = new String(&amp;quot;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-09T03:16:39.000Z">
+<meta property="og:updated_time" content="2018-04-09T03:19:46.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java字符串缓冲池">
 <meta name="twitter:description" content="Java 中 String 创建详细解释字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象一旦创建就不允许修改。String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象. 对象创建看下面一段代码.1234567String str2 = new String(&amp;quot;">
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,141
+                  1,143
                 </span>
               
 
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -437,10 +437,10 @@
 <h5 id="intern-方法"><a href="#intern-方法" class="headerlink" title="intern()方法"></a>intern()方法</h5><blockquote>
 <p>按照「JDK」的帮助文档来说,是返回字符串对象的规范化表示形式。通<br>俗一点说,就是返回对应这个字符串内容的那个「String Pool」里的对象</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String s = new String(&quot;Hello&quot;);  </span><br><span class="line">String s1 = &quot;Hello&quot;;  </span><br><span class="line">String s2 = new String(&quot;Hello&quot;);  </span><br><span class="line">System.out.println(s == s1.intern());  </span><br><span class="line">System.out.println(s == s2.intern());  </span><br><span class="line">System.out.println(s1 == s2.intern());</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String s = new String(&quot;Hello&quot;);  </span><br><span class="line">String s1 = &quot;Hello&quot;;  </span><br><span class="line">String s2 = new String(&quot;Hello&quot;);  </span><br><span class="line"></span><br><span class="line">System.out.println(s == s1.intern());  </span><br><span class="line">System.out.println(s == s2.intern());  </span><br><span class="line">System.out.println(s1 == s2.intern());</span><br></pre></td></tr></table></figure>
 <p>上面输出的结果是：false、false、true</p>
 <p>s1.intern().他的执行流程是,在 pool 里去查找 s1 对应的内容(也就是『Hello』).如果找到,则返回 pool 里的对象.如果没有(老实说,我没想到有哪种情况是没有的),则<br>在 Pool 创建这个对象,并返回…<br>这样就很容易理解了「s1.intern」 返回的是 pool 里的『Hello』对象.与 s 这个堆里的对象肯定不同,返回 false.同理,s 与 s2.intern()也肯定不同,返回 false.第三个,s1 与s2.intern().其中 s2.intern()返回的是 pool 中的『Hello』对象,而 s1 也是指向 pool 中的『Hello』对象.所以返回的是 true。</p>
-<h5 id="字符串相加"><a href="#字符串相加" class="headerlink" title="字符串相加"></a>字符串相加</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String hello = &quot;hello&quot;;  </span><br><span class="line">String hel = &quot;hel&quot;;  </span><br><span class="line">String lo = &quot;lo&quot;;  </span><br><span class="line">System.out.println(hello == &quot;hel&quot; + &quot;lo&quot;);  </span><br><span class="line">System.out.println(hello == &quot;hel&quot; + lo);</span><br></pre></td></tr></table></figure>
+<h5 id="字符串相加"><a href="#字符串相加" class="headerlink" title="字符串相加"></a>字符串相加</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String hello = &quot;hello&quot;;  </span><br><span class="line">String hel = &quot;hel&quot;;  </span><br><span class="line">String lo = &quot;lo&quot;;  </span><br><span class="line"></span><br><span class="line">System.out.println(hello == &quot;hel&quot; + &quot;lo&quot;);  </span><br><span class="line">System.out.println(hello == &quot;hel&quot; + lo);</span><br></pre></td></tr></table></figure>
 <p>上面的输出是：true、false</p>
 <p>首先,上面已经说明了<code>hello</code>、<code>hel</code> 、<code>lo</code> 这三个都是指向 pool 中的对象..<br>现在我们考虑<code>&quot;hel&quot; + &quot;lo&quot;</code> 按照内容来说,两个相加也就是”hello”.这个时候,这个会<br>返回 pool 中的”hello”对象.所以,<code>hello == &quot;hel&quot; + &quot;lo&quot;</code> 返回的是 true .<br>而<code>&quot;hel&quot; + lo</code> 虽然内容也是”hello”,但是它将在堆里面生成一个”hello”对象,并返回<br>这个对象…所以这里的结果是 false</p>
 <p>总结一下就是</p>
@@ -505,6 +505,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/09/Java-Integer缓冲区/" rel="prev" title="Java Integer缓冲区">
+                Java Integer缓冲区 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -592,7 +596,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -732,7 +736,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.3k</span>
+    <span title="Site words total count">10.7k</span>
   
 </div>
 
