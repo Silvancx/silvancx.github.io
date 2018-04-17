@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="中间件,框架," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Java 中 String 创建详细解释字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象一旦创建就不允许修改。String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象. 对象创建看下面一段代码.1234567String str2 = new String(&amp;quot;">
-<meta name="keywords" content="Java">
+<meta name="description" content="RabbitMQ简介消息系统允许软件、应用相互连接和扩展．这些应用可以相互链接起来组成一个更大的应用，或者将用户设备和数据进行连接．消息系统通过将消息的发送和接收分离来实现应用程序的异步和解偶． 或许你正在考虑进行数据投递，非阻塞操作或推送通知。或许你想要实现发布／订阅，异步处理，或者工作队列。所有这些都可以通过消息系统实现。 RabbitMQ是一个消息代理 - 一个消息系统的媒介。它可以为你的应">
+<meta name="keywords" content="中间件,框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java字符串缓冲池">
-<meta property="og:url" content="http://silvancx.org/2018/04/09/Java字符串缓冲池/index.html">
+<meta property="og:title" content="RabbitMQ使用记录">
+<meta property="og:url" content="http://silvancx.org/2018/04/14/RabbitMQ使用记录/index.html">
 <meta property="og:site_name" content="Silvancx Blog">
-<meta property="og:description" content="Java 中 String 创建详细解释字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象一旦创建就不允许修改。String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象. 对象创建看下面一段代码.1234567String str2 = new String(&amp;quot;">
+<meta property="og:description" content="RabbitMQ简介消息系统允许软件、应用相互连接和扩展．这些应用可以相互链接起来组成一个更大的应用，或者将用户设备和数据进行连接．消息系统通过将消息的发送和接收分离来实现应用程序的异步和解偶． 或许你正在考虑进行数据投递，非阻塞操作或推送通知。或许你想要实现发布／订阅，异步处理，或者工作队列。所有这些都可以通过消息系统实现。 RabbitMQ是一个消息代理 - 一个消息系统的媒介。它可以为你的应">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-09T06:50:39.000Z">
+<meta property="og:updated_time" content="2018-04-17T09:00:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java字符串缓冲池">
-<meta name="twitter:description" content="Java 中 String 创建详细解释字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象一旦创建就不允许修改。String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象. 对象创建看下面一段代码.1234567String str2 = new String(&amp;quot;">
+<meta name="twitter:title" content="RabbitMQ使用记录">
+<meta name="twitter:description" content="RabbitMQ简介消息系统允许软件、应用相互连接和扩展．这些应用可以相互链接起来组成一个更大的应用，或者将用户设备和数据进行连接．消息系统通过将消息的发送和接收分离来实现应用程序的异步和解偶． 或许你正在考虑进行数据投递，非阻塞操作或推送通知。或许你想要实现发布／订阅，异步处理，或者工作队列。所有这些都可以通过消息系统实现。 RabbitMQ是一个消息代理 - 一个消息系统的媒介。它可以为你的应">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://silvancx.org/2018/04/09/Java字符串缓冲池/"/>
+  <link rel="canonical" href="http://silvancx.org/2018/04/14/RabbitMQ使用记录/"/>
 
 
 
 
 
-  <title>Java字符串缓冲池 | Silvancx Blog</title>
+  <title>RabbitMQ使用记录 | Silvancx Blog</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://silvancx.org/2018/04/09/Java字符串缓冲池/">
+    <link itemprop="mainEntityOfPage" href="http://silvancx.org/2018/04/14/RabbitMQ使用记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Silvancx">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java字符串缓冲池</h1>
+          <h1 class="post-title" itemprop="name headline">RabbitMQ使用记录</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T10:14:32+08:00">
-                2018-04-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-14T15:32:24+08:00">
+                2018-04-14
               </time>
             
 
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/消息中间件/" itemprop="url" rel="index">
+                    <span itemprop="name">消息中间件</span>
                   </a>
                 </span>
 
@@ -353,8 +353,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/09/Java字符串缓冲池/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/09/Java字符串缓冲池/" itemprop="commentsCount"></span>
+                <a href="/2018/04/14/RabbitMQ使用记录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/14/RabbitMQ使用记录/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -362,7 +362,7 @@
 
           
           
-             <span id="/2018/04/09/Java字符串缓冲池/" class="leancloud_visitors" data-flag-title="Java字符串缓冲池">
+             <span id="/2018/04/14/RabbitMQ使用记录/" class="leancloud_visitors" data-flag-title="RabbitMQ使用记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,143
+                  1,176
                 </span>
               
 
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  4
                 </span>
               
             </div>
@@ -424,30 +424,30 @@
       
 
       
-        <p>Java 中 String 创建详细解释<br>字符串对象是一种特殊的对象「String」 类是一个不可变的类..也就说,String 对象<br>一旦创建就不允许修改。<br>String 类有一个对应的 String 池,也就是 「String pool」.每一个内容相同的字符串对象都对应于一个 pool 里的对象.</p>
-<h5 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h5><p>看下面一段代码.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str2 = new String(&quot;Hello&quot;);</span><br><span class="line">String str = &quot;Hello&quot;;</span><br><span class="line">String str3 = new String(&quot;Hello&quot;);</span><br><span class="line"></span><br><span class="line">System.out.println(str == str2);</span><br><span class="line">System.out.println(str == str3);</span><br><span class="line">System.out.println(str2 == str3);</span><br></pre></td></tr></table></figure></p>
-<p>请问 前面三条语句分别创建了几个对象? 分别是什么.后面的输出分别是什么<br><a id="more"></a><br><code>String str2 = new String(&quot;Hello&quot;)</code>这句代码总共创建了<strong>两个</strong>对象，其内容都是「Hello」。<br>注意<code>str2</code>只是引用，不是对象，new操作生成的才是对象。<br>创建流程 首先括号里的「Hello」是先到<code>String pool</code>缓冲池中查找是否有「Hello」这个对象，没有则在<code>String pool</code>中创建该对象。然后通过<code>new</code>操作在堆内存中创建了一个「Hello」对象，这里的<code>str2</code>指向了堆内存中「Hello」对象。</p>
-<p><code>String str = &quot;Hello&quot;</code>它所执行的操作流程与第一句代码相比，少了<code>new</code>关键字。直接查找<code>String pool</code>缓冲池是否有「Hello」对象。而此时，第一条语句已经在pool中创建了一个「Hello」对象，所以这句代码没有创建对象。<code>str</code>指向的是String Pool中的「Hello」对象。</p>
-<p><code>String str3 = new String(&quot;Hello&quot;)</code>这句代码与第一句代码一样，首先它没有再String Pool中创建「Hello」对象，因为第一句代码已经先行创建了该对象。而只是在堆内存中创建「Hello」对象。<em>注意</em>虽然内容都是「Hello」<code>str2</code>与<code>str3</code>表示的是不同的对象，它们所分配的内存地址不一样。</p>
-<p>下面3个<code>==</code>号判断，<em>注意</em>『==号判断的是内存地址是否相等』</p>
-<p><code>str == str2</code>很显然str的引用指向<code>String Pool</code>缓冲池，str2引用指向堆内存，所以是<code>false</code>。</p>
-<p><code>str == str3</code>也是一样，str的引用指向<code>String Pool</code>缓冲池，str3引用指向堆内存，所以是<code>false</code>。</p>
-<p><code>str2 == str3</code>虽然两个引用都是指向堆内存，内容也是「Hello」但是它们的内存地址不一样，所以是<code>false</code></p>
-<h5 id="intern-方法"><a href="#intern-方法" class="headerlink" title="intern()方法"></a>intern()方法</h5><blockquote>
-<p>按照「JDK」的帮助文档来说,是返回字符串对象的规范化表示形式。通<br>俗一点说,就是返回对应这个字符串内容的那个「String Pool」里的对象</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String s = new String(&quot;Hello&quot;);  </span><br><span class="line">String s1 = &quot;Hello&quot;;  </span><br><span class="line">String s2 = new String(&quot;Hello&quot;);  </span><br><span class="line"></span><br><span class="line">System.out.println(s == s1.intern());  </span><br><span class="line">System.out.println(s == s2.intern());  </span><br><span class="line">System.out.println(s1 == s2.intern());</span><br></pre></td></tr></table></figure>
-<p>上面输出的结果是：false、false、true</p>
-<p>s1.intern().他的执行流程是,在 pool 里去查找 s1 对应的内容(也就是『Hello』).如果找到,则返回 pool 里的对象.如果没有(老实说,我没想到有哪种情况是没有的),则<br>在 Pool 创建这个对象,并返回…<br>这样就很容易理解了「s1.intern」 返回的是 pool 里的『Hello』对象.与 s 这个堆里的对象肯定不同,返回 false.同理,s 与 s2.intern()也肯定不同,返回 false.第三个,s1 与s2.intern().其中 s2.intern()返回的是 pool 中的『Hello』对象,而 s1 也是指向 pool 中的『Hello』对象.所以返回的是 true。</p>
-<h5 id="字符串相加"><a href="#字符串相加" class="headerlink" title="字符串相加"></a>字符串相加</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String hello = &quot;hello&quot;;  </span><br><span class="line">String hel = &quot;hel&quot;;  </span><br><span class="line">String lo = &quot;lo&quot;;  </span><br><span class="line"></span><br><span class="line">System.out.println(hello == &quot;hel&quot; + &quot;lo&quot;);  </span><br><span class="line">System.out.println(hello == &quot;hel&quot; + lo);</span><br></pre></td></tr></table></figure>
-<p>上面的输出是：true、false</p>
-<p>首先,上面已经说明了<code>hello</code>、<code>hel</code> 、<code>lo</code> 这三个都是指向 pool 中的对象..<br>现在我们考虑<code>&quot;hel&quot; + &quot;lo&quot;</code> 按照内容来说,两个相加也就是”hello”.这个时候,这个会<br>返回 pool 中的”hello”对象.所以,<code>hello == &quot;hel&quot; + &quot;lo&quot;</code> 返回的是 true .<br>而<code>&quot;hel&quot; + lo</code> 虽然内容也是”hello”,但是它将在堆里面生成一个”hello”对象,并返回<br>这个对象…所以这里的结果是 false</p>
-<p>总结一下就是</p>
-<blockquote>
-<p>如果加号两边的是字面值(字面值就是直接在””里写的值,比如上面<br>的”hel”与”lo”),那么将在 pool 里查找有没对应内容的对象(这里的内容就是<br>“hello”),并返回 pool 里的对象.这和 hello 是一样的….<br>如果加号两边不满足上面的条件(比如,两边的值是引用值或者堆里的字符串对<br>象).那么将不会再 pool 里查找”hello”,而是直接在堆里生成一个新的对象。</p>
-</blockquote>
-<p>参考文章<br><a href="https://blog.csdn.net/tiantiandjava/article/details/46309163" target="_blank" rel="noopener">https://blog.csdn.net/tiantiandjava/article/details/46309163</a></p>
-
+        <h5 id="RabbitMQ简介"><a href="#RabbitMQ简介" class="headerlink" title="RabbitMQ简介"></a>RabbitMQ简介</h5><p>消息系统允许软件、应用相互连接和扩展．这些应用可以相互链接起来组成一个更大的应用，或者将用户设备和数据进行连接．消息系统通过将消息的发送和接收分离来实现应用程序的异步和解偶．</p>
+<p>或许你正在考虑进行<code>数据投递</code>，<code>非阻塞</code>操作或<code>推送通知</code>。或许你想要实现<code>发布／订阅</code>，<code>异步处理</code>，或者<code>工作队列</code>。所有这些都可以通过消息系统实现。</p>
+<p>RabbitMQ是一个消息代理 - 一个消息系统的媒介。它可以为你的应用提供一个通用的消息发送和接收平台，并且保证消息在传输过程中的安全。</p>
+<a id="more"></a>
+<h5 id="可靠性"><a href="#可靠性" class="headerlink" title="可靠性"></a>可靠性</h5><p>RabbitMQ提供了多种技术可以让你在性能和可靠性之间进行权衡。这些技术包括持久性机制、投递确认、发布者证实和高可用性机制。</p>
+<h5 id="灵活的路由"><a href="#灵活的路由" class="headerlink" title="灵活的路由"></a>灵活的路由</h5><p>消息在到达队列前是通过交换机进行路由的。RabbitMQ为典型的路由逻辑提供了多种内置交换机类型。如果你有更复杂的路由需求，可以将这些交换机组合起来使用，你甚至可以实现自己的交换机类型，并且当做RabbitMQ的插件来使用。</p>
+<h5 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h5><p>在相同局域网中的多个RabbitMQ服务器可以聚合在一起，作为一个独立的逻辑代理来使用。</p>
+<h5 id="联合"><a href="#联合" class="headerlink" title="联合"></a>联合</h5><p>对于服务器来说，它比集群需要更多的松散和非可靠链接。为此RabbitMQ提供了联合模型。</p>
+<h5 id="高可用队列"><a href="#高可用队列" class="headerlink" title="高可用队列"></a>高可用队列</h5><p>在同一个集群里，队列可以被镜像到多个机器中，以确保当其中某些硬件出现故障后，你的消息仍然安全。</p>
+<h5 id="多协议"><a href="#多协议" class="headerlink" title="多协议"></a>多协议</h5><p>RabbitMQ 支持多种消息协议的消息传递。</p>
+<h5 id="丰富的客户端"><a href="#丰富的客户端" class="headerlink" title="丰富的客户端"></a>丰富的客户端</h5><p>只要是你能想到的编程语言几乎都有与其相适配的RabbitMQ客户端。</p>
+<h5 id="可视化管理工具"><a href="#可视化管理工具" class="headerlink" title="可视化管理工具"></a>可视化管理工具</h5><p>RabbitMQ附带了一个易于使用的可视化管理工具，它可以帮助你监控消息代理的每一个环节。</p>
+<h5 id="追踪"><a href="#追踪" class="headerlink" title="追踪"></a>追踪</h5><p>如果你的消息系统有异常行为，RabbitMQ还提供了追踪的支持，让你能够发现问题所在。</p>
+<h5 id="插件系统"><a href="#插件系统" class="headerlink" title="插件系统"></a>插件系统</h5><p>RabbitMQ附带了各种各样的插件来对自己进行扩展。你甚至也可以写自己的插件来使用。</p>
+<!-- more -->
+<hr>
+<h5 id="消息代理和他们所扮演的角色"><a href="#消息代理和他们所扮演的角色" class="headerlink" title="消息代理和他们所扮演的角色"></a>消息代理和他们所扮演的角色</h5><p>消息代理（message brokers）从发布者（publishers）亦称生产者（producers）那儿接收消息，并根据既定的路由规则把接收到的消息发送给处理消息的消费者（consumers）。</p>
+<p>由于AMQP是一个网络协议，所以这个过程中的发布者，消费者，消息代理 可以存在于不同的设备上。</p>
+<h5 id="AMQP模型简介"><a href="#AMQP模型简介" class="headerlink" title="AMQP模型简介"></a>AMQP模型简介</h5><p>消息（message）被发布者（publisher）发送给交换机（exchange），交换机常常被比喻成邮局或者邮箱。然后交换机将收到的消息根据路由规则分发给绑定的队列（queue）。最后AMQP代理会将消息投递给订阅了此队列的消费者，或者消费者按照需求自行获取。</p>
+<p>发布者（publisher）发布消息时可以给消息指定各种消息属性（message meta-data）。有些属性有可能会被消息代理（brokers）使用，然而其他的属性则是完全不透明的，它们只能被接收消息的应用所使用。</p>
+<p>从安全角度考虑，网络是不可靠的，接收消息的应用也有可能在处理消息的时候失败。基于此原因，AMQP模块包含了一个消息确认（message acknowledgements）的概念：当一个消息从队列中投递给消费者后（consumer），消费者会通知一下消息代理（broker），这个可以是自动的也可以由处理消息的应用的开发者执行。当“消息确认”被启用的时候，消息代理不会完全将消息从队列中删除，直到它收到来自消费者的确认回执（acknowledgement）。</p>
+<p>在某些情况下，例如当一个消息无法被成功路由时，消息或许会被返回给发布者并被丢弃。或者，如果消息代理执行了延期操作，消息会被放入一个所谓的死信队列中。此时，消息发布者可以选择某些参数来处理这些特殊情况。</p>
+<p>队列，交换机和绑定统称为AMQP实体（AMQP entities）。</p>
+<h5 id="待补充…"><a href="#待补充…" class="headerlink" title="待补充…"></a>待补充…</h5>
       
     </div>
     <div>    
@@ -459,7 +459,7 @@
       </li>
       <li class="post-copyright-link">
         <strong>本文链接：</strong>
-        <a href="/2018/04/09/Java字符串缓冲池/" title="Java字符串缓冲池">2018/04/09/Java字符串缓冲池/</a>
+        <a href="/2018/04/14/RabbitMQ使用记录/" title="RabbitMQ使用记录">2018/04/14/RabbitMQ使用记录/</a>
       </li>
       <li class="post-copyright-license">
         <strong>版权声明： </strong>
@@ -482,7 +482,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+            <a href="/tags/中间件/" rel="tag"><i class="fa fa-tag"></i> 中间件</a>
+          
+            <a href="/tags/框架/" rel="tag"><i class="fa fa-tag"></i> 框架</a>
           
         </div>
       
@@ -495,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/21/Quartz-cron表达式/" rel="next" title="Quartz-Cron表达式">
-                <i class="fa fa-chevron-left"></i> Quartz-Cron表达式
+              <a href="/2018/04/10/面向对象基本特征/" rel="next" title="面向对象基本特征">
+                <i class="fa fa-chevron-left"></i> 面向对象基本特征
               </a>
             
           </div>
@@ -505,8 +507,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/09/Java-Integer缓冲区/" rel="prev" title="Java Integer缓冲区">
-                Java Integer缓冲区 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/17/String、StringBuffer、StringBuilder的区别于联系/" rel="prev" title="String、StringBuffer、StringBuilder的区别于联系">
+                String、StringBuffer、StringBuilder的区别于联系 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -700,7 +702,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#对象创建"><span class="nav-number">1.</span> <span class="nav-text">对象创建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#intern-方法"><span class="nav-number">2.</span> <span class="nav-text">intern()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串相加"><span class="nav-number">3.</span> <span class="nav-text">字符串相加</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#RabbitMQ简介"><span class="nav-number">1.</span> <span class="nav-text">RabbitMQ简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#可靠性"><span class="nav-number">2.</span> <span class="nav-text">可靠性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#灵活的路由"><span class="nav-number">3.</span> <span class="nav-text">灵活的路由</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#集群"><span class="nav-number">4.</span> <span class="nav-text">集群</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#联合"><span class="nav-number">5.</span> <span class="nav-text">联合</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#高可用队列"><span class="nav-number">6.</span> <span class="nav-text">高可用队列</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多协议"><span class="nav-number">7.</span> <span class="nav-text">多协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#丰富的客户端"><span class="nav-number">8.</span> <span class="nav-text">丰富的客户端</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#可视化管理工具"><span class="nav-number">9.</span> <span class="nav-text">可视化管理工具</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#追踪"><span class="nav-number">10.</span> <span class="nav-text">追踪</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插件系统"><span class="nav-number">11.</span> <span class="nav-text">插件系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#消息代理和他们所扮演的角色"><span class="nav-number">12.</span> <span class="nav-text">消息代理和他们所扮演的角色</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AMQP模型简介"><span class="nav-number">13.</span> <span class="nav-text">AMQP模型简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#待补充…"><span class="nav-number">14.</span> <span class="nav-text">待补充…</span></a></li></ol></div>
             
 
           </div>
@@ -906,7 +908,7 @@
       function renderGitment(){
         var gitment = new Gitmint({
           <!--  id: window.location.pathname, -->
-            id: '1523240072000',
+            id: '1523691144000',
             owner: 'Silvancx',
             repo: 'silvancx.github.io',
             
