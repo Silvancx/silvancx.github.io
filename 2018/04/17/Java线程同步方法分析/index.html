@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Silvancx Blog">
 <meta property="og:description" content="再说线程同步问题前先了解下竟态条件和临界区 竟态条件在同一程序中运行多个线程本身不会导致问题，问题在于多个线程访问了相同的资源。如，同一内存区（变量，数组，或对象）、系统（数据库，web services 等）或文件。实际上，这些问题只有在一或多个线程向这些资源做了写操作时才有可能发生，只要资源没有发生变化,多个线程读取相同的资源就是安全的。 多线程同时执行下面的代码可能会出错：123456pu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-17T11:14:37.404Z">
+<meta property="og:updated_time" content="2018-04-18T03:14:41.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java线程同步方法分析">
 <meta name="twitter:description" content="再说线程同步问题前先了解下竟态条件和临界区 竟态条件在同一程序中运行多个线程本身不会导致问题，问题在于多个线程访问了相同的资源。如，同一内存区（变量，数组，或对象）、系统（数据库，web services 等）或文件。实际上，这些问题只有在一或多个线程向这些资源做了写操作时才有可能发生，只要资源没有发生变化,多个线程读取相同的资源就是安全的。 多线程同时执行下面的代码可能会出错：123456pu">
@@ -100,7 +100,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,179
+                  3,305
                 </span>
               
 
@@ -455,7 +455,16 @@
 <p>当一个线程访问对象的一个synchronized(this)同步代码块时，另一个线程仍然可以访问该对象中的非synchronized(this)同步代码块。其他线程对对象中所有其它synchronized(this)同步代码块的访问将被阻塞。</p>
 <p>如果线程进入由线程已经拥有的监控器保护的 synchronized 块，就允许线程继续进行，当线程退出第二个（或者后续） synchronized 块的时候，不释放锁，只有线程退出它进入的监控器保护的第一个 synchronized 块时，才释放锁。</p>
 <p>在修饰代码块的时候需要一个reference对象作为锁的对象. 在修饰方法的时候默认是当前对象作为锁的对象. 在修饰类时候默认是当前类的Class对象作为锁的对象.</p>
-<h5 id="Lock"><a href="#Lock" class="headerlink" title="Lock"></a>Lock</h5><p>Lock 接口实现提供了比使用 synchronized 方法和语句可获得的更广泛的锁定操作。此实现允许更灵活的结构，可以具有差别很大的属性，可以支持多个相关的 Condition 对象。在硬件层面依赖特殊的CPU指令实现同步更加灵活。</p>
+<h5 id="Lock"><a href="#Lock" class="headerlink" title="Lock"></a>Lock</h5><blockquote>
+<p>Lock是一个接口提供了无条件的、可轮询的、定时的、可中断的锁获取操作，所有加锁和解锁的方法都是显式的。 </p>
+<blockquote>
+<p>synchronized是Java关键字,在JVM层面实现了对临界资源的<strong>同步互斥访问</strong>。<br>但synchronized粒度有些大，在处理实际问题时存在诸多局限性，比如响应中断等。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Lock提供了比synchronized更广泛的锁操作，它能以更优雅的方式处理线程同步问题。</p>
+</blockquote>
+<p>Lock 接口实现提供了比使用 synchronized 方法和语句可获得的更广泛的锁定操作。此实现允许更灵活的结构，可以具有差别很大的属性，可以支持多个相关的 Condition 对象。在硬件层面依赖特殊的CPU指令实现同步更加灵活。</p>
 <p>什么是Condition ？</p>
 <blockquote>
 <p> Condition 接口将 Object 监视器方法（wait、notify 和 notifyAll）分解成截然不同的对象，以便通过将这些对象与任意 Lock 实现组合使用，为每个对象提供多个等待 set（wait-set）。其中，Lock 替代了 synchronized 方法和语句的使用，Condition 替代了 Object 监视器方法的使用。</p>
@@ -567,6 +576,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/04/18/Java中的各种锁/" rel="prev" title="Java中的各种锁">
+                Java中的各种锁 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -653,7 +666,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -675,7 +688,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -793,7 +806,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.3k</span>
+    <span title="Site words total count">26.5k</span>
   
 </div>
 

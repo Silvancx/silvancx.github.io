@@ -4,12 +4,34 @@
 
     
   <url>
-    <loc>http://silvancx.org/2018/04/17/Java-static%E4%BF%AE%E9%A5%B0%E7%AC%A6/</loc>
-    <lastmod>2018-04-17T11:15:24.929Z</lastmod>
+    <loc>http://silvancx.org/2018/04/18/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B/</loc>
+    <lastmod>2018-04-18T10:46:30.978Z</lastmod>
     <data>
         <display>
-        <title>Java static修饰符</title>
-        <pubTime>2018-04-17T09:07:32.000Z</pubTime>
+        <title>Java设计模式-单例</title>
+        <pubTime>2018-04-18T09:28:18.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://silvancx.org/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://silvancx.org/2018/04/18/Java%E4%B8%ADtry-catch-finally-return%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/</loc>
+    <lastmod>2018-04-18T10:42:43.899Z</lastmod>
+    <data>
+        <display>
+        <title>Java中try-catch-finally-return的执行顺序</title>
+        <pubTime>2018-04-18T07:07:49.000Z</pubTime>
         
         <tag>Java</tag>
          
@@ -24,8 +46,30 @@
 
     
   <url>
+    <loc>http://silvancx.org/2018/04/18/Java%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E9%94%81/</loc>
+    <lastmod>2018-04-18T07:08:41.728Z</lastmod>
+    <data>
+        <display>
+        <title>Java中的各种锁</title>
+        <pubTime>2018-04-18T03:07:35.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>锁</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://silvancx.org/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://silvancx.org/2018/04/17/Java%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-04-17T11:14:37.404Z</lastmod>
+    <lastmod>2018-04-18T03:14:41.745Z</lastmod>
     <data>
         <display>
         <title>Java线程同步方法分析</title>
@@ -47,11 +91,31 @@
     
   <url>
     <loc>http://silvancx.org/2018/04/17/String%E3%80%81StringBuffer%E3%80%81StringBuilder%E7%9A%84%E5%8C%BA%E5%88%AB%E4%BA%8E%E8%81%94%E7%B3%BB/</loc>
-    <lastmod>2018-04-17T09:05:55.890Z</lastmod>
+    <lastmod>2018-04-18T01:41:09.731Z</lastmod>
     <data>
         <display>
-        <title>String、StringBuffer、StringBuilder的区别于联系</title>
+        <title>String、StringBuffer、StringBuilder的区别与联系</title>
         <pubTime>2018-04-17T08:06:06.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://silvancx.org/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://silvancx.org/2018/04/17/Java-static%E4%BF%AE%E9%A5%B0%E7%AC%A6/</loc>
+    <lastmod>2018-04-17T11:15:24.929Z</lastmod>
+    <data>
+        <display>
+        <title>Java static修饰符</title>
+        <pubTime>2018-04-17T09:07:32.000Z</pubTime>
         
         <tag>Java</tag>
          
