@@ -3,10 +3,31 @@
 
 
     
+  <url>
+    <loc>http://silvancx.org/2018/04/20/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2018-04-20T08:39:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>Java设计模式-观察者模式</title>
+        <pubTime>2018-04-20T06:59:37.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://silvancx.org/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://silvancx.org/2018/04/19/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2018-04-19T11:12:28.871Z</lastmod>
+    <lastmod>2018-04-20T02:17:09.000Z</lastmod>
     <data>
         <display>
         <title>Java设计模式-命令模式</title>
@@ -25,6 +46,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://silvancx.org/2018/04/19/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
